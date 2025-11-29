@@ -1,5 +1,7 @@
 package compasses.expandedstorage.impl.block.entity;
 
+import compasses.expandedstorage.api.EsChestType;
+import compasses.expandedstorage.impl.block.AbstractChestBlock;
 import compasses.expandedstorage.impl.block.OpenableBlock;
 import compasses.expandedstorage.impl.block.entity.extendable.InventoryBlockEntity;
 import compasses.expandedstorage.impl.block.entity.extendable.OpenableBlockEntity;
@@ -11,6 +13,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -48,12 +52,35 @@ public class OldChestBlockEntity extends InventoryBlockEntity {
     }
 
     @Override
+    public void setChanged() {
+        super.setChanged();
+
+        BlockState state = this.getBlockState();
+        if (state.getBlock() instanceof AbstractChestBlock) {
+            if (state.getValue(AbstractChestBlock.CURSED_CHEST_TYPE) != EsChestType.SINGLE) {
+                Direction dir = AbstractChestBlock.getDirectionToAttached(state);
+                BlockPos otherPos = worldPosition.relative(dir);
+                BlockEntity be = level.getBlockEntity(otherPos);
+                if (be instanceof OldChestBlockEntity other) {
+                    this.setCachedDoubleInventory(other);
+                    other.setCachedDoubleInventory(this);
+                } else {
+                    this.invalidateDoubleBlockCache();
+                }
+            } else {
+                this.invalidateDoubleBlockCache();
+            }
+        }
+    }
+
+    @Override
     public DoubleItemAccess getItemAccess() {
         return (DoubleItemAccess) super.getItemAccess();
     }
 
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        setChanged();
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             if (cachedDoubleInventory != null) {
                 return LazyOptional.of(() -> new InvWrapper(cachedDoubleInventory)).cast();
@@ -63,4 +90,61 @@ public class OldChestBlockEntity extends InventoryBlockEntity {
         return super.getCapability(cap, side);
     }
 
+    @Override
+    public int getContainerSize() {
+        if (cachedDoubleInventory != null) {
+            return cachedDoubleInventory.getContainerSize();
+        }
+        return super.getContainerSize();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        if (cachedDoubleInventory != null) {
+            return cachedDoubleInventory.isEmpty();
+        }
+        return super.isEmpty();
+    }
+
+    @Override
+    public ItemStack getItem(int slot) {
+        if (cachedDoubleInventory != null) {
+            return cachedDoubleInventory.getItem(slot);
+        }
+        return super.getItem(slot);
+    }
+
+    @Override
+    public void setItem(int slot, ItemStack stack) {
+        if (cachedDoubleInventory != null) {
+            cachedDoubleInventory.setItem(slot, stack);
+        } else {
+            super.setItem(slot, stack);
+        }
+    }
+
+    @Override
+    public ItemStack removeItem(int slot, int count) {
+        if (cachedDoubleInventory != null) {
+            return cachedDoubleInventory.removeItem(slot, count);
+        }
+        return super.removeItem(slot, count);
+    }
+
+    @Override
+    public ItemStack removeItemNoUpdate(int slot) {
+        if (cachedDoubleInventory != null) {
+            return cachedDoubleInventory.removeItemNoUpdate(slot);
+        }
+        return super.removeItemNoUpdate(slot);
+    }
+
+    @Override
+    public void clearContent() {
+        if (cachedDoubleInventory != null) {
+            cachedDoubleInventory.clearContent();
+        } else {
+            super.clearContent();
+        }
+    }
 }
