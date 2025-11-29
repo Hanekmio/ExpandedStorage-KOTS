@@ -1,0 +1,46 @@
+{
+  "mappings": {
+    "compasses/expandedstorage/impl/mixin/common/SpectatorEntityInventoryViewingFix": {
+      "interactOn(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;": "Lnet/minecraft/world/entity/player/Player;m_36157_(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;"
+    },
+    "compasses/expandedstorage/impl/mixin/common/BlockEntityIdFix": {
+      "loadStatic(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/block/entity/BlockEntity;": "Lnet/minecraft/world/level/block/entity/BlockEntity;m_155241_(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/block/entity/BlockEntity;"
+    },
+    "compasses/expandedstorage/impl/mixin/common/SparrowBlockFix": {
+      "read(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/ai/village/poi/PoiManager;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/chunk/ProtoChunk;": "Lnet/minecraft/world/level/chunk/storage/ChunkSerializer;m_188230_(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/ai/village/poi/PoiManager;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/chunk/ProtoChunk;"
+    },
+    "compasses/expandedstorage/impl/mixin/common/DataFixerEntrypoint": {
+      "addFixers(Lcom/mojang/datafixers/DataFixerBuilder;)V": "Lnet/minecraft/util/datafix/DataFixers;m_14513_(Lcom/mojang/datafixers/DataFixerBuilder;)V"
+    },
+    "compasses/expandedstorage/impl/mixin/common/SparrowItemIdFix": {
+      "of(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/ItemStack;m_41712_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/item/ItemStack;"
+    },
+    "compasses/expandedstorage/impl/mixin/common/SpectatorBlockInventoryViewingFix": {
+      "Lnet/minecraft/world/level/block/state/BlockState;getMenuProvider(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/MenuProvider;": "Lnet/minecraft/world/level/block/state/BlockState;m_60750_(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/MenuProvider;",
+      "useItemOn(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;": "Lnet/minecraft/server/level/ServerPlayerGameMode;m_7179_(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "compasses/expandedstorage/impl/mixin/common/SpectatorEntityInventoryViewingFix": {
+        "interactOn(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;": "Lnet/minecraft/world/entity/player/Player;m_36157_(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;"
+      },
+      "compasses/expandedstorage/impl/mixin/common/BlockEntityIdFix": {
+        "loadStatic(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/block/entity/BlockEntity;": "Lnet/minecraft/world/level/block/entity/BlockEntity;m_155241_(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/block/entity/BlockEntity;"
+      },
+      "compasses/expandedstorage/impl/mixin/common/SparrowBlockFix": {
+        "read(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/ai/village/poi/PoiManager;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/chunk/ProtoChunk;": "Lnet/minecraft/world/level/chunk/storage/ChunkSerializer;m_188230_(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/ai/village/poi/PoiManager;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/chunk/ProtoChunk;"
+      },
+      "compasses/expandedstorage/impl/mixin/common/DataFixerEntrypoint": {
+        "addFixers(Lcom/mojang/datafixers/DataFixerBuilder;)V": "Lnet/minecraft/util/datafix/DataFixers;m_14513_(Lcom/mojang/datafixers/DataFixerBuilder;)V"
+      },
+      "compasses/expandedstorage/impl/mixin/common/SparrowItemIdFix": {
+        "of(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/ItemStack;m_41712_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/item/ItemStack;"
+      },
+      "compasses/expandedstorage/impl/mixin/common/SpectatorBlockInventoryViewingFix": {
+        "Lnet/minecraft/world/level/block/state/BlockState;getMenuProvider(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/MenuProvider;": "Lnet/minecraft/world/level/block/state/BlockState;m_60750_(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/MenuProvider;",
+        "useItemOn(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;": "Lnet/minecraft/server/level/ServerPlayerGameMode;m_7179_(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;"
+      }
+    }
+  }
+}

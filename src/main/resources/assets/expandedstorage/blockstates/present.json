@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "type\u003dsingle": {
+      "model": "expandedstorage:block/red_present"
+    },
+    "type\u003dleft": {
+      "model": "expandedstorage:block/white_present"
+    },
+    "type\u003dright": {
+      "model": "expandedstorage:block/white_present"
+    },
+    "type\u003dtop": {
+      "model": "expandedstorage:block/candy_cane_present"
+    },
+    "type\u003dbottom": {
+      "model": "expandedstorage:block/candy_cane_present"
+    },
+    "type\u003dfront": {
+      "model": "expandedstorage:block/green_present"
+    },
+    "type\u003dback": {
+      "model": "expandedstorage:block/green_present"
+    }
+  }
+}

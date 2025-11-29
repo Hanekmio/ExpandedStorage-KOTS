@@ -1,0 +1,109 @@
+{
+  "variants": {
+    "facing\u003dnorth,type\u003dtop": {
+      "model": "expandedstorage:block/old_gold_chest/top"
+    },
+    "facing\u003deast,type\u003dtop": {
+      "model": "expandedstorage:block/old_gold_chest/top",
+      "y": 90
+    },
+    "facing\u003dsouth,type\u003dtop": {
+      "model": "expandedstorage:block/old_gold_chest/top",
+      "y": 180
+    },
+    "facing\u003dwest,type\u003dtop": {
+      "model": "expandedstorage:block/old_gold_chest/top",
+      "y": 270
+    },
+    "facing\u003dnorth,type\u003dbottom": {
+      "model": "expandedstorage:block/old_gold_chest/bottom"
+    },
+    "facing\u003deast,type\u003dbottom": {
+      "model": "expandedstorage:block/old_gold_chest/bottom",
+      "y": 90
+    },
+    "facing\u003dsouth,type\u003dbottom": {
+      "model": "expandedstorage:block/old_gold_chest/bottom",
+      "y": 180
+    },
+    "facing\u003dwest,type\u003dbottom": {
+      "model": "expandedstorage:block/old_gold_chest/bottom",
+      "y": 270
+    },
+    "facing\u003dnorth,type\u003dfront": {
+      "model": "expandedstorage:block/old_gold_chest/front"
+    },
+    "facing\u003deast,type\u003dfront": {
+      "model": "expandedstorage:block/old_gold_chest/front",
+      "y": 90
+    },
+    "facing\u003dsouth,type\u003dfront": {
+      "model": "expandedstorage:block/old_gold_chest/front",
+      "y": 180
+    },
+    "facing\u003dwest,type\u003dfront": {
+      "model": "expandedstorage:block/old_gold_chest/front",
+      "y": 270
+    },
+    "facing\u003dnorth,type\u003dback": {
+      "model": "expandedstorage:block/old_gold_chest/back"
+    },
+    "facing\u003deast,type\u003dback": {
+      "model": "expandedstorage:block/old_gold_chest/back",
+      "y": 90
+    },
+    "facing\u003dsouth,type\u003dback": {
+      "model": "expandedstorage:block/old_gold_chest/back",
+      "y": 180
+    },
+    "facing\u003dwest,type\u003dback": {
+      "model": "expandedstorage:block/old_gold_chest/back",
+      "y": 270
+    },
+    "facing\u003dnorth,type\u003dleft": {
+      "model": "expandedstorage:block/old_gold_chest/left"
+    },
+    "facing\u003deast,type\u003dleft": {
+      "model": "expandedstorage:block/old_gold_chest/left",
+      "y": 90
+    },
+    "facing\u003dsouth,type\u003dleft": {
+      "model": "expandedstorage:block/old_gold_chest/left",
+      "y": 180
+    },
+    "facing\u003dwest,type\u003dleft": {
+      "model": "expandedstorage:block/old_gold_chest/left",
+      "y": 270
+    },
+    "facing\u003dnorth,type\u003dright": {
+      "model": "expandedstorage:block/old_gold_chest/right"
+    },
+    "facing\u003deast,type\u003dright": {
+      "model": "expandedstorage:block/old_gold_chest/right",
+      "y": 90
+    },
+    "facing\u003dsouth,type\u003dright": {
+      "model": "expandedstorage:block/old_gold_chest/right",
+      "y": 180
+    },
+    "facing\u003dwest,type\u003dright": {
+      "model": "expandedstorage:block/old_gold_chest/right",
+      "y": 270
+    },
+    "facing\u003dnorth,type\u003dsingle": {
+      "model": "expandedstorage:block/old_gold_chest/single"
+    },
+    "facing\u003deast,type\u003dsingle": {
+      "model": "expandedstorage:block/old_gold_chest/single",
+      "y": 90
+    },
+    "facing\u003dsouth,type\u003dsingle": {
+      "model": "expandedstorage:block/old_gold_chest/single",
+      "y": 180
+    },
+    "facing\u003dwest,type\u003dsingle": {
+      "model": "expandedstorage:block/old_gold_chest/single",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: ellemes.expandedstorage
+MixinConfigs: expandedstorage-common.mixins.json,expandedstorage-forge.m
+ ixins.json
+

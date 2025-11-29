@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing\u003ddown,open\u003dfalse": {
+      "x": 180,
+      "model": "expandedstorage:block/copper_barrel"
+    },
+    "facing\u003ddown,open\u003dtrue": {
+      "x": 180,
+      "model": "expandedstorage:block/copper_barrel_open"
+    },
+    "facing\u003deast,open\u003dfalse": {
+      "x": 90,
+      "y": 90,
+      "model": "expandedstorage:block/copper_barrel"
+    },
+    "facing\u003deast,open\u003dtrue": {
+      "x": 90,
+      "y": 90,
+      "model": "expandedstorage:block/copper_barrel_open"
+    },
+    "facing\u003dnorth,open\u003dfalse": {
+      "x": 90,
+      "model": "expandedstorage:block/copper_barrel"
+    },
+    "facing\u003dnorth,open\u003dtrue": {
+      "x": 90,
+      "model": "expandedstorage:block/copper_barrel_open"
+    },
+    "facing\u003dsouth,open\u003dfalse": {
+      "x": 90,
+      "y": 180,
+      "model": "expandedstorage:block/copper_barrel"
+    },
+    "facing\u003dsouth,open\u003dtrue": {
+      "x": 90,
+      "y": 180,
+      "model": "expandedstorage:block/copper_barrel_open"
+    },
+    "facing\u003dup,open\u003dfalse": {
+      "model": "expandedstorage:block/copper_barrel"
+    },
+    "facing\u003dup,open\u003dtrue": {
+      "model": "expandedstorage:block/copper_barrel_open"
+    },
+    "facing\u003dwest,open\u003dfalse": {
+      "x": 90,
+      "y": 270,
+      "model": "expandedstorage:block/copper_barrel"
+    },
+    "facing\u003dwest,open\u003dtrue": {
+      "x": 90,
+      "y": 270,
+      "model": "expandedstorage:block/copper_barrel_open"
+    }
+  }
+}

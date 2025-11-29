@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing\u003dnorth,sparrow\u003dfalse": {
+      "y": 0,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel"
+    },
+    "facing\u003deast,sparrow\u003dfalse": {
+      "y": 90,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel"
+    },
+    "facing\u003dsouth,sparrow\u003dfalse": {
+      "y": 180,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel"
+    },
+    "facing\u003dwest,sparrow\u003dfalse": {
+      "y": 270,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel"
+    },
+    "facing\u003dnorth,sparrow\u003dtrue": {
+      "y": 0,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel_with_sparrow"
+    },
+    "facing\u003deast,sparrow\u003dtrue": {
+      "y": 90,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel_with_sparrow"
+    },
+    "facing\u003dsouth,sparrow\u003dtrue": {
+      "y": 180,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel_with_sparrow"
+    },
+    "facing\u003dwest,sparrow\u003dtrue": {
+      "y": 270,
+      "model": "expandedstorage:block/exposed_copper_mini_barrel_with_sparrow"
+    }
+  }
+}
