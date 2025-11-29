@@ -14,6 +14,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.DoubleBlockCombiner;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,7 +49,19 @@ public class OldChestBlockEntity extends InventoryBlockEntity {
     }
 
     public void setCachedDoubleInventory(OldChestBlockEntity other) {
-        this.cachedDoubleInventory = VariableSidedInventory.of(this.getInventory(), other.getInventory());
+        BlockState state = this.getBlockState();
+        if (!(state.getBlock() instanceof AbstractChestBlock)) {
+            this.cachedDoubleInventory = VariableSidedInventory.of(this.getInventory(), other.getInventory());
+            return;
+        }
+
+        EsChestType type = state.getValue(AbstractChestBlock.CURSED_CHEST_TYPE);
+
+        if (AbstractChestBlock.getBlockType(type) == DoubleBlockCombiner.BlockType.FIRST) {
+            this.cachedDoubleInventory = VariableSidedInventory.of(this.getInventory(), other.getInventory());
+        } else {
+            this.cachedDoubleInventory = VariableSidedInventory.of(other.getInventory(), this.getInventory());
+        }
     }
 
     @Override

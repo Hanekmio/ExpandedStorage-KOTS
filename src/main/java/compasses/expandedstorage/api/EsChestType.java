@@ -6,12 +6,12 @@ import net.minecraft.world.level.block.state.properties.ChestType;
 import java.util.Locale;
 
 public enum EsChestType implements StringRepresentable {
-    TOP(-1),
-    BOTTOM(-1),
     FRONT(0),
-    BACK(2),
-    LEFT(1),
+    BACK(1),
+    LEFT(2),
     RIGHT(3),
+    TOP(4),
+    BOTTOM(5),
     SINGLE(-1);
 
     private final String name;
