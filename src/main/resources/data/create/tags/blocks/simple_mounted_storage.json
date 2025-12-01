@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "expandedstorage:copper_barrel",
+    "expandedstorage:iron_barrel",
+    "expandedstorage:gold_barrel",
+    "expandedstorage:diamond_barrel",
+    "expandedstorage:obsidian_barrel",
+    "expandedstorage:netherite_barrel"
+  ]
+}

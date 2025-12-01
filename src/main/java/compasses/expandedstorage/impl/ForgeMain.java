@@ -5,6 +5,7 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import compasses.expandedstorage.impl.block.entity.extendable.OpenableBlockEntity;
 import compasses.expandedstorage.impl.block.misc.BasicLockable;
+import compasses.expandedstorage.impl.block.misc.CopperBlockHelper;
 import compasses.expandedstorage.impl.misc.Utils;
 import compasses.expandedstorage.impl.recipe.ConversionRecipeManager;
 import compasses.expandedstorage.impl.recipe.ConversionRecipeReloadListener;

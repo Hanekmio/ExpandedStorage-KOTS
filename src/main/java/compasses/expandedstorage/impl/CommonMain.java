@@ -27,7 +27,6 @@ import compasses.expandedstorage.impl.item.StorageConversionKit;
 import compasses.expandedstorage.impl.item.StorageMutator;
 import compasses.expandedstorage.impl.item.ToolUsageResult;
 import compasses.expandedstorage.impl.misc.CommonPlatformHelper;
-import compasses.expandedstorage.impl.block.misc.CopperBlockHelper;
 import compasses.expandedstorage.impl.misc.Tier;
 import compasses.expandedstorage.impl.misc.Utils;
 import compasses.expandedstorage.impl.recipe.BlockConversionRecipe;
@@ -58,7 +57,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -593,10 +591,6 @@ public final class CommonMain {
                 miniStorageItems,
                 miniStorageBlockEntityType
         ));
-
-        if (!isClient) {
-            HoneycombItem.WAXABLES.get().putAll(CopperBlockHelper.dewaxing().inverse());
-        }
     }
 
     public static <T> void iterateNamedList(List<NamedValue<? extends T>> list, BiConsumer<ResourceLocation, T> consumer) {
