@@ -5,7 +5,7 @@ license = "MIT"
 
 [[mods]]
 modId = "expandedstorage"
-version = "10.3.1"
+version = "10.3.2"
 displayName = "Expanded Storage KOTS"
 authors = "Polaris_Light"
 logoFile = "icon.png"

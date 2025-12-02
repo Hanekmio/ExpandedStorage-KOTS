@@ -3,7 +3,7 @@ package compasses.expandedstorage.impl.compat.create;
 import com.mojang.serialization.Codec;
 import com.simibubi.create.api.contraption.storage.item.MountedItemStorage;
 import com.simibubi.create.api.contraption.storage.item.MountedItemStorageType;
-import com.simibubi.create.api.contraption.storage.item.chest.ChestMountedStorage;
+import com.simibubi.create.api.contraption.storage.item.simple.SimpleMountedStorage;
 import com.simibubi.create.api.contraption.storage.item.menu.StorageInteractionWrapper;
 import com.simibubi.create.content.contraptions.Contraption;
 import com.simibubi.create.foundation.item.ItemHelper;
@@ -21,6 +21,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -44,43 +46,17 @@ import java.util.function.Predicate;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
+public class EsSimpleMountedStorage extends SimpleMountedStorage {
+    public static final Codec<EsSimpleMountedStorage> CODEC =
+            SimpleMountedStorage.codec(EsSimpleMountedStorage::new);
 
-/**
- * Mounted storage for ES chests, handles double chest combination.
- */
-public class EsChestMountedStorage extends ChestMountedStorage {
-    public static final Codec<EsChestMountedStorage> CODEC =
-            ChestMountedStorage.codec(EsChestMountedStorage::new);
-
-    protected EsChestMountedStorage(MountedItemStorageType<?> type, IItemHandler handler) {
+    protected EsSimpleMountedStorage(MountedItemStorageType<?> type, IItemHandler handler) {
         super(type, handler);
     }
 
-    public EsChestMountedStorage(IItemHandler handler) {
-		this(EsMountedStorageTypes.ES_CHEST.get(), handler);
+    public EsSimpleMountedStorage(IItemHandler handler) {
+		this(EsMountedStorageTypes.ES_SIMPLE.get(), handler);
 	}
-
-    @Override
-    protected IItemHandlerModifiable getHandlerForMenu(StructureBlockInfo info, Contraption contraption) {
-        BlockState state = info.state();
-        EsChestType type = state.getValue(AbstractChestBlock.CURSED_CHEST_TYPE);
-        if (type == EsChestType.SINGLE)
-            return this;
-
-        Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
-        Direction connectedDir = AbstractChestBlock.getDirectionToAttached(state);
-        BlockPos otherPos = info.pos().relative(connectedDir);
-
-        MountedItemStorage otherHalf = contraption.getStorage().getMountedItems().storages.get(otherPos);
-        if (otherHalf == null)
-            return this;
-
-        if (AbstractChestBlock.getBlockType(type) == DoubleBlockCombiner.BlockType.FIRST) {
-            return new CombinedInvWrapper(this, otherHalf);
-        } else {
-            return new CombinedInvWrapper(otherHalf, this);
-        }
-    }
 
     @Override
     public boolean handleInteraction(ServerPlayer player, Contraption contraption, StructureBlockInfo info) {
@@ -108,4 +84,20 @@ public class EsChestMountedStorage extends ChestMountedStorage {
         playOpeningSound(player.serverLevel(), worldPos);
         return true;
     }
+
+	protected void playOpeningSound(ServerLevel level, Vec3 pos) {
+		level.playSound(
+			null, BlockPos.containing(pos),
+			SoundEvents.BARREL_OPEN, SoundSource.BLOCKS,
+			0.75f, 1f
+		);
+	}
+
+	protected void playClosingSound(ServerLevel level, Vec3 pos) {
+		level.playSound(
+			null, BlockPos.containing(pos),
+			SoundEvents.BARREL_CLOSE, SoundSource.BLOCKS,
+			0.75f, 1f
+		);
+	}
 }

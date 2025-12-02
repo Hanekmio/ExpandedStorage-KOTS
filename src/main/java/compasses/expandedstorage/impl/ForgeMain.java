@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableBiMap;
 import compasses.expandedstorage.impl.block.entity.extendable.OpenableBlockEntity;
 import compasses.expandedstorage.impl.block.misc.BasicLockable;
 import compasses.expandedstorage.impl.block.misc.CopperBlockHelper;
-import compasses.expandedstorage.impl.compat.create.EsMountedStorageTypes;
+import compasses.expandedstorage.impl.compat.create.CreateCompat;
 import compasses.expandedstorage.impl.misc.Utils;
 import compasses.expandedstorage.impl.recipe.ConversionRecipeManager;
 import compasses.expandedstorage.impl.recipe.ConversionRecipeReloadListener;
@@ -101,9 +101,10 @@ public final class ForgeMain {
         });
         
         // Create Compat
-        //if (FMLLoader.getLoadingModList().getModFileById("create") != null) {
-        //   EsMountedStorageTypes.register();
-        //}
+        if (FMLLoader.getLoadingModList().getModFileById("create") != null) {
+            CreateCompat.register();
+            CreateCompat.REGISTRATE.registerEventListeners(FMLJavaModLoadingContext.get().getModEventBus());
+        }
     }
 
     private void registerContent(Content content) {

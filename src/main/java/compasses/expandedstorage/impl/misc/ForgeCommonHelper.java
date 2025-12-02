@@ -44,7 +44,7 @@ public class ForgeCommonHelper implements CommonPlatformHelper {
     }
 
     @Override
-    public void openScreenHandler(ServerPlayer player, Container inventory,Component title, ResourceLocation forcedScreenType) {
+    public void openScreenHandler(ServerPlayer player, Container inventory, Component title, ResourceLocation forcedScreenType) {
         NetworkHooks.openScreen(player, new MenuProvider() {
             @Override
             public Component getDisplayName() {
